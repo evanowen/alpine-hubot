@@ -23,7 +23,7 @@
     "hubot-diagnostics": "0.0.2",
     "hubot-help": "^0.2.2",
     "hubot-out-of-office": "0.0.7",
-    "hubot-pager-me": "^2.1.10",
+    "hubot-pager-me": "^3.0.0",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.4",
     "hubot-schedule": "^0.6.1",
