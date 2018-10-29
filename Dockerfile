@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER Ben Visser <benny@noqcks.io>
+MAINTAINER Evan Owen <evan.owen@voyant.com>
 
 # Install dependencies
 RUN apk update && apk upgrade \
@@ -22,16 +22,18 @@ USER  hubot
 WORKDIR /hubot
 
 # Install hubot
-RUN yo hubot --owner="Ben Visser <benny@noqcks.io>" --name="dockbot" --description="Roll, roll, rollercoaster" --defaults
+RUN yo hubot --owner="Evan Owen <evan.owen@voyant.com>" --name="dockbot" --description="Hubot on docker" --defaults
 COPY package.json package.json
 RUN npm install
 ADD hubot/hubot-scripts.json /hubot/
 ADD hubot/external-scripts.json /hubot/
 
+
 # Overwriting start script https://github.com/noqcks/alpine-hubot/issues/2
-ADD bin/hubot bin/ 
+ADD bin/hubot bin/
 
 EXPOSE 80
+EXPOSE 443
 
 # And go
 ENTRYPOINT ["/bin/sh", "-c", "bin/hubot --adapter slack"]

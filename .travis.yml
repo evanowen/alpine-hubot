@@ -3,5 +3,5 @@ services:
   - docker
 
 script:
-  - docker build -t noqcks/alpine-hubot .
-  - docker run -d noqcks/alpine-hubot
+  - docker build -t evanowen/alpine-hubot .
+  - docker run -d evanowen/alpine-hubot
